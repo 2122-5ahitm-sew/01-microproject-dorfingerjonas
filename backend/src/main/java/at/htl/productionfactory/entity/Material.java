@@ -15,23 +15,11 @@ public class Material extends PanacheEntity {
     public String code;
     public boolean inStock;
 
-    @OneToMany
-    @Cascade(CascadeType.ALL)
-    public List<Production> productions;
-
     public Material(Long id, String name, String code, boolean inStock) {
         this.id = id;
         this.name = name;
         this.code = code;
         this.inStock = inStock;
-    }
-
-    public Material(Long id, String name, String code, boolean inStock, List<Production> productions) {
-        this.id = id;
-        this.name = name;
-        this.code = code;
-        this.inStock = inStock;
-        this.productions = productions;
     }
 
     public Material() {
@@ -43,7 +31,6 @@ public class Material extends PanacheEntity {
                 "name='" + name + '\'' +
                 ", code='" + code + '\'' +
                 ", inStock=" + inStock +
-                ", productions=" + productions +
                 '}';
     }
 }

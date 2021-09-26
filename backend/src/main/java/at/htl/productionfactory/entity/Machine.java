@@ -16,17 +16,12 @@ public class Machine extends PanacheEntity {
     @Enumerated(EnumType.STRING)
     public MachineType machineType;
 
-    @OneToMany
-    @Cascade(CascadeType.ALL)
-    public List<Production> productions;
-
     public Machine(MachineType machineType) {
         this.machineType = machineType;
     }
 
-    public Machine(MachineType machineType, List<Production> productions) {
+    public Machine(MachineType machineType) {
         this.machineType = machineType;
-        this.productions = productions;
     }
 
     public Machine() {
@@ -36,7 +31,6 @@ public class Machine extends PanacheEntity {
     public String toString() {
         return "Machine{" +
                 "machineType=" + machineType +
-                ", productions=" + productions +
                 '}';
     }
 }

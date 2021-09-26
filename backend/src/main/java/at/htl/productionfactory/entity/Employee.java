@@ -22,25 +22,12 @@ public class Employee extends PanacheEntity {
     @Enumerated(EnumType.STRING)
     public MachineType handleAbleMachineType;
 
-    @OneToMany
-    @Cascade(CascadeType.ALL)
-    public List<Production> productions;
-
     public Employee(String name, int age, float salary, LocalDate hireDate, MachineType handleAbleMachineType) {
         this.name = name;
         this.age = age;
         this.salary = salary;
         this.hireDate = hireDate;
         this.handleAbleMachineType = handleAbleMachineType;
-    }
-
-    public Employee(String name, int age, float salary, LocalDate hireDate, MachineType handleAbleMachineType, List<Production> productions) {
-        this.name = name;
-        this.age = age;
-        this.salary = salary;
-        this.hireDate = hireDate;
-        this.handleAbleMachineType = handleAbleMachineType;
-        this.productions = productions;
     }
 
     public Employee() {
@@ -54,7 +41,6 @@ public class Employee extends PanacheEntity {
                 ", salary=" + salary +
                 ", hireDate=" + hireDate +
                 ", handleAbleMachineType=" + handleAbleMachineType +
-                ", productions=" + productions +
                 '}';
     }
 }

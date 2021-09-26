@@ -19,21 +19,10 @@ public class Product extends PanacheEntity {
     @Cascade(CascadeType.ALL)
     public Material material;
 
-    @OneToMany
-    @Cascade(CascadeType.ALL)
-    public List<Production> productions;
-
     public Product(String name, MachineType requiredMachineType, Material material) {
         this.name = name;
         this.requiredMachineType = requiredMachineType;
         this.material = material;
-    }
-
-    public Product(String name, MachineType requiredMachineType, Material material, List<Production> productions) {
-        this.name = name;
-        this.requiredMachineType = requiredMachineType;
-        this.material = material;
-        this.productions = productions;
     }
 
     public Product() {
@@ -44,7 +33,6 @@ public class Product extends PanacheEntity {
         return "Product{" +
                 "name='" + name + '\'' +
                 ", material=" + material +
-                ", productions=" + productions +
                 '}';
     }
 }

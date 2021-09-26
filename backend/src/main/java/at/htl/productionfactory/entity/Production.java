@@ -17,15 +17,12 @@ public class Production extends PanacheEntity {
     @ManyToOne
     public Machine machine;
 
-    @ManyToOne
-    public Material material;
 
-    public Production(Long id, Employee employee, Product product, Machine machine, Material material) {
+    public Production(Long id, Employee employee, Product product, Machine machine) {
         this.id = id;
         this.employee = employee;
         this.product = product;
         this.machine = machine;
-        this.material = material;
     }
 
     public Production() {
@@ -37,7 +34,6 @@ public class Production extends PanacheEntity {
                 "employee=" + employee +
                 ", product=" + product +
                 ", machine=" + machine +
-                ", material=" + material +
                 '}';
     }
 }
