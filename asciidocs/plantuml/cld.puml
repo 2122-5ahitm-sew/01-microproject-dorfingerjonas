@@ -1,0 +1,53 @@
+@startuml
+class Employee
+class Machine
+class MachineType
+class Material
+class Product
+class Production
+
+Product "1" --- "*" Production
+Material "1" --- "*" Production
+Employee "1" --- "*" Production
+Machine "1" --- "*" Production
+Machine "*" --- "1" MachineType
+Employee "*" --- "1" MachineType
+Product "*" --- "1" Material
+
+class Employee {
+    + name
+    + age
+    + salary
+    + hireDate
+    + handleAbleMachineType
+}
+
+class Machine {
+    + machineType
+    + requiredMachineType
+}
+
+enum MachineType {
+    HEAVY,
+    MEDIUM,
+    LIGHT
+}
+
+class Material {
+    + name
+    + code
+    + inStock
+}
+
+class Product {
+    + name
+    + material
+}
+
+class Production {
+    + employee
+    + machine
+    + product
+}
+
+@enduml
