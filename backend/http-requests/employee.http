@@ -3,3 +3,16 @@ GET http://localhost:8080/employees
 ###
 
 GET http://localhost:8080/employees/1
+
+###
+
+POST http://localhost:8080/employees
+Content-Type: application/json
+
+{
+  "name": "Martin Moser",
+  "hireDate": "2020-05-31",
+  "salary": 1890,
+  "canOperate": "HEAVY",
+  "age": 23
+}
