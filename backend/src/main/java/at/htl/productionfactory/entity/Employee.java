@@ -1,15 +1,11 @@
 package at.htl.productionfactory.entity;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
-import org.hibernate.annotations.Cascade;
-import org.hibernate.annotations.CascadeType;
 
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
-import javax.persistence.OneToMany;
 import java.time.LocalDate;
-import java.util.List;
 
 @Entity
 public class Employee extends PanacheEntity {
@@ -20,14 +16,14 @@ public class Employee extends PanacheEntity {
     public LocalDate hireDate;
 
     @Enumerated(EnumType.STRING)
-    public MachineType handleAbleMachineType;
+    public MachineType canOperate;
 
-    public Employee(String name, int age, float salary, LocalDate hireDate, MachineType handleAbleMachineType) {
+    public Employee(String name, int age, float salary, LocalDate hireDate, MachineType canOperate) {
         this.name = name;
         this.age = age;
         this.salary = salary;
         this.hireDate = hireDate;
-        this.handleAbleMachineType = handleAbleMachineType;
+        this.canOperate = canOperate;
     }
 
     public Employee() {
@@ -40,7 +36,7 @@ public class Employee extends PanacheEntity {
                 ", age=" + age +
                 ", salary=" + salary +
                 ", hireDate=" + hireDate +
-                ", handleAbleMachineType=" + handleAbleMachineType +
+                ", canOperate=" + canOperate +
                 '}';
     }
 }
