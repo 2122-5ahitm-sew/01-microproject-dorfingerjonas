@@ -3,3 +3,14 @@ GET http://localhost:8080/materials
 ###
 
 GET http://localhost:8080/materials/1
+
+###
+
+POST http://localhost:8080/materials
+Content-Type: application/json
+
+{
+  "name": "Schwarzes Granulat",
+  "code": "MAT-SW01",
+  "inStock": true
+}
