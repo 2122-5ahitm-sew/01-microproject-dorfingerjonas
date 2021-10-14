@@ -18,8 +18,7 @@ public class Production extends PanacheEntity {
     public Machine machine;
 
 
-    public Production(Long id, Employee employee, Product product, Machine machine) {
-        this.id = id;
+    public Production(Employee employee, Product product, Machine machine) {
         this.employee = employee;
         this.product = product;
         this.machine = machine;
