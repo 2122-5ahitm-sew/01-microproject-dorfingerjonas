@@ -38,4 +38,12 @@ public class EmployeeService {
                 .created(URI.create(info.getPath() + "/" + repository.save(employee).id))
                 .build();
     }
+
+    @PUT
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response update(Employee employee, @Context UriInfo info) {
+        return Response
+                .created(URI.create(info.getPath() + "/" + repository.save(employee).id))
+                .build();
+    }
 }
