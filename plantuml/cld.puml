@@ -1,17 +1,14 @@
 @startuml
 class Employee
 class Machine
-class MachineType
+enum MachineType
 class Material
 class Product
 class Production
 
 Product "1" --- "*" Production
-Material "1" --- "*" Production
 Employee "1" --- "*" Production
 Machine "1" --- "*" Production
-Machine "*" --- "1" MachineType
-Employee "*" --- "1" MachineType
 Product "*" --- "1" Material
 
 class Employee {
@@ -19,12 +16,11 @@ class Employee {
     + age
     + salary
     + hireDate
-    + handleAbleMachineType
+    + canOperate
 }
 
 class Machine {
     + machineType
-    + requiredMachineType
 }
 
 enum MachineType {
@@ -42,6 +38,7 @@ class Material {
 class Product {
     + name
     + material
+    + requiredMachineType
 }
 
 class Production {
