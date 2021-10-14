@@ -16,3 +16,17 @@ Content-Type: application/json
   "canOperate": "HEAVY",
   "age": 23
 }
+
+###
+
+PUT http://localhost:8080/employees
+Content-Type: application/json
+
+{
+  "id": 1,
+  "name": "Martina Muster",
+  "hireDate": "2019-01-12",
+  "salary": 1900,
+  "canOperate": "MEDIUM",
+  "age": 34
+}
