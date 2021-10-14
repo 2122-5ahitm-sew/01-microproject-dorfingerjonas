@@ -26,3 +26,7 @@ Content-Type: application/json
   "code": "MAT-SW01",
   "inStock": false
 }
+
+###
+
+DELETE http://localhost:8080/materials/1
