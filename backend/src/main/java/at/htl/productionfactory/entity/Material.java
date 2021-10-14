@@ -1,12 +1,8 @@
 package at.htl.productionfactory.entity;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
-import org.hibernate.annotations.Cascade;
-import org.hibernate.annotations.CascadeType;
 
 import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-import java.util.List;
 
 @Entity
 public class Material extends PanacheEntity {
@@ -15,8 +11,7 @@ public class Material extends PanacheEntity {
     public String code;
     public boolean inStock;
 
-    public Material(Long id, String name, String code, boolean inStock) {
-        this.id = id;
+    public Material(String name, String code, boolean inStock) {
         this.name = name;
         this.code = code;
         this.inStock = inStock;
