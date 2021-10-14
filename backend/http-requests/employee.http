@@ -30,3 +30,7 @@ Content-Type: application/json
   "canOperate": "MEDIUM",
   "age": 34
 }
+
+### DELETE
+
+DELETE http://localhost:8080/employees/1
