@@ -5,7 +5,11 @@ import at.htl.productionfactory.entity.Employee;
 
 import javax.inject.Inject;
 import javax.ws.rs.*;
+import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+import javax.ws.rs.core.UriInfo;
+import java.net.URI;
 import java.util.List;
 
 @Path("/employees")
@@ -27,4 +31,11 @@ public class EmployeeService {
         return repository.findById(id);
     }
 
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response create(Employee employee, @Context UriInfo info) {
+        return Response
+                .created(URI.create(info.getPath() + "/" + repository.save(employee).id))
+                .build();
+    }
 }
