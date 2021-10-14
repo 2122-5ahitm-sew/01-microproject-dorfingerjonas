@@ -14,3 +14,15 @@ Content-Type: application/json
   "code": "MAT-SW01",
   "inStock": true
 }
+
+###
+
+PUT http://localhost:8080/materials
+Content-Type: application/json
+
+{
+  "id": 1,
+  "name": "Schwarzes Granulat",
+  "code": "MAT-SW01",
+  "inStock": false
+}
