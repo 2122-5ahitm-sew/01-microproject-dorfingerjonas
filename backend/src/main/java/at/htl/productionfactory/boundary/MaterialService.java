@@ -39,4 +39,12 @@ public class MaterialService {
                 .build();
     }
 
+    @PUT
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response update(Material material, @Context UriInfo info) {
+        return Response
+                .created(URI.create(info.getPath() + "/" + repository.save(material).id))
+                .build();
+    }
+
 }
