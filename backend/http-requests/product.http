@@ -3,3 +3,19 @@ GET http://localhost:8080/products
 ###
 
 GET http://localhost:8080/products/1
+
+###
+
+POST http://localhost:8080/products
+Content-Type: application/json
+
+{
+  "name": "Tankdeckel",
+  "duration": 35,
+  "requiredMachineType": "MEDIUM",
+  "material": {
+    "name": "Schwarzes Granulat",
+    "code": "MAT-SW01",
+    "inStock": true
+  }
+}
