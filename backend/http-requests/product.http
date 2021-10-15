@@ -19,3 +19,20 @@ Content-Type: application/json
     "inStock": true
   }
 }
+
+###
+
+PUT http://localhost:8080/products
+Content-Type: application/json
+
+{
+  "id": 2,
+  "name": "Tankdeckel",
+  "duration": 45,
+  "requiredMachineType": "HEAVY",
+  "material": {
+    "name": "Schwarzes Granulat",
+    "code": "MAT-SW01",
+    "inStock": true
+  }
+}
