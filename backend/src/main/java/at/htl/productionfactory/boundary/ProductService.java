@@ -5,7 +5,11 @@ import at.htl.productionfactory.entity.Product;
 
 import javax.inject.Inject;
 import javax.ws.rs.*;
+import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+import javax.ws.rs.core.UriInfo;
+import java.net.URI;
 import java.util.List;
 
 @Path("/products")
@@ -25,5 +29,13 @@ public class ProductService {
     @Consumes(MediaType.APPLICATION_JSON)
     public Product findById(@PathParam("id") long id) {
         return repository.findById(id);
+    }
+
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response create(Product product, @Context UriInfo info) {
+        return Response
+                .created(URI.create(info.getPath() + "/" + repository.save(product).id))
+                .build();
     }
 }
