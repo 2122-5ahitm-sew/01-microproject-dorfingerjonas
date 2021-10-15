@@ -4,6 +4,7 @@ import at.htl.productionfactory.controller.ProductRepository;
 import at.htl.productionfactory.entity.Product;
 
 import javax.inject.Inject;
+import javax.transaction.Transactional;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
@@ -45,5 +46,14 @@ public class ProductService {
         return Response
                 .created(URI.create(info.getPath() + "/" + repository.save(product).id))
                 .build();
+    }
+
+    @DELETE
+    @Path("{id}")
+    @Transactional
+    public Response delete(@PathParam("id") long id) {
+        repository.delete(repository.findById(id));
+
+        return Response.ok().build();
     }
 }
