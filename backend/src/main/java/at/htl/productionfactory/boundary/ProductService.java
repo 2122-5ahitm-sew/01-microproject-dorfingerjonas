@@ -38,4 +38,12 @@ public class ProductService {
                 .created(URI.create(info.getPath() + "/" + repository.save(product).id))
                 .build();
     }
+
+    @PUT
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response update(Product product, @Context UriInfo info) {
+        return Response
+                .created(URI.create(info.getPath() + "/" + repository.save(product).id))
+                .build();
+    }
 }
